@@ -1,0 +1,11 @@
+Programming challenge
+b: I use 2000 bins for theta, ranging 0 to pi
+and 2000 bins for rho from -diagonal to +diagonal
+
+c: I use global threshold first, then, 
+use local_max_diameter for each picture to 
+find the largest local maximum within local_max_diameter.(we define local by specify the diameter, first element of is local_max_diameter  is difference of theta’s bin number, the second is difference of rho’s bin number.)
+
+d: my algorithm is to take a theta, rho bin, and reverse map it back to x,y space.
+we should get pixels in a line. Then, we calculate every point’s gradient and filter out if the gradient which doesn’t have large difference than it’s neighbor(which means it is inside the gap, thus we remove it)
+Then, we just stitch up points if we find a large enough “gap”. 
